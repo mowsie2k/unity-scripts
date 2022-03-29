@@ -22,27 +22,10 @@ public class PlayerMovement : MonoBehaviour
         change = Vector3.zero;
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
-        //Debug.Log(change);
-        //UpdateAnimationAndMove();
+
         UpdateAnimation();
         MoveCharacter();
     }
-
-
-    ////void UpdateAnimationAndMove()
-    ////{
-    //    if (change != Vector3.zero)
-    //    {
-    //        MoveCharacter();
-    //        animator.SetFloat("moveX", change.x);
-    //        animator.SetFloat("moveY", change.y);
-    //        animator.SetBool("moving", true);
-    //    }
-    //    else
-    //    {
-    //        animator.SetBool("moving", false);
-    //    }
-    //}
 
     void UpdateAnimation()
     {
@@ -64,9 +47,4 @@ public class PlayerMovement : MonoBehaviour
             thisRigidbody.MovePosition(transform.position + change.normalized * speed * Time.deltaTime);
         }
     }
-
-    //void MoveCharacter()
-    //{
-    //    thisRigidbody.MovePosition(transform.position + change.normalized * speed * Time.deltaTime);
-    //}
 }
